@@ -1,5 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const { errors } = require('celebrate');
+const helmet = require('helmet');
+const cookieParser = require('cookie-parser');
+const router = require('./routes/index');
+const { handleErrors } = require('./middlewares/handleErrors');
 
 // Слушаем 3000 порт
 const { PORT = 3000 } = process.env;
@@ -7,9 +12,15 @@ const { PORT = 3000 } = process.env;
 // создаем инстанс сервера
 const app = express();
 
+app.use(express.json());
+app.use(helmet());
+app.use(cookieParser());
 
 mongoose.connect('mongodb://127.0.0.1:27017/bitfilmsdb');
 
+app.use('/', router);// подключаем маршруты
+app.use(errors()); // обработчик ошибок celebrate
+app.use(handleErrors); // централизованный обработчик
 // запускаем сервер на порте 300
 app.listen(PORT, () => {
   // Если всё работает, консоль покажет, какой порт приложение слушает

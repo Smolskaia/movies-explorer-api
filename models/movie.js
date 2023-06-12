@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const validator = require("validator");
+const mongoose = require('mongoose');
+const validator = require('validator');
 
 // Опишем схему:
 const movieSchema = new mongoose.Schema(
@@ -72,7 +72,7 @@ const movieSchema = new mongoose.Schema(
       required: true,
     },
     // nameRU — название фильма на русском языке. Обязательное поле-строка.
-    nameEN: {
+    nameRU: {
       type: String,
       required: true,
     },
@@ -82,7 +82,7 @@ const movieSchema = new mongoose.Schema(
       required: true,
     },
   },
-  { versionKey: false }
+  { versionKey: false },
 );
 
 // создаём модель и экспортируем её
