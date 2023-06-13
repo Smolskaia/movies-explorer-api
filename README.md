@@ -11,5 +11,5 @@ IP
 
 Backend 
 
-# Чеклист проекта  
+## Чеклист проекта  
 https://code.s3.yandex.net/web-developer/static/new-program/web-diploma-criteria-2.0/index.html 
