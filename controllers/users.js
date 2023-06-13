@@ -30,10 +30,10 @@ module.exports.createUser = (req, res, next) => {
         }))// если данные не записались
         .catch((err) => {
           if (err.code === 11000) {
-            return next(new ConflictError('This user already exists'));
+            return next(new ConflictError('Этот пользователь уже зарегистрирован'));
           }
           if (err.name === 'ValidationError') {
-            return next(new BadRequestError('Incorrect user data'));
+            return next(new BadRequestError('Некорректные данные пользователя'));
           }
           return next(err);
         });

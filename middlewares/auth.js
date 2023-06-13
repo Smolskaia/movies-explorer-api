@@ -9,7 +9,7 @@ module.exports = (req, res, next) => {
   // убеждаемся, что он есть или начинается с Bearer
   if (!authorization || !authorization.startsWith('Bearer ')) {
     // return res.status(401).send({ message: 'Необходима авторизация' });
-    return next(new UnauthorizedError('Authorization required'));
+    return next(new UnauthorizedError('Необходима авторизация'));
   }
   // извлечём токен
   // Для этого вызовем метод replace,
@@ -32,7 +32,7 @@ module.exports = (req, res, next) => {
     payload = jwt.verify(token, process.env.NODE_ENV !== 'production' ? JWT_SECRET : 'dev-secret');
   } catch (err) {
     // отправим ошибку, если не получилось
-    return next(new UnauthorizedError('Authorization required'));
+    return next(new UnauthorizedError('Необходима авторизация'));
   }
 
   req.user = payload; // записываем пейлоуд в объект запроса
