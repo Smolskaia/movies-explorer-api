@@ -23,8 +23,10 @@ const corsOptions = {
   origin: [
     'http://localhost:3000',
     'http://localhost:3001',
-    // 'https://    ',
-    // 'http://    ',
+    'http://pro-movies.nomoredomains.rocks',
+    'https://pro-movies.nomoredomains.rocks',
+    'http://api.pro-movies.nomoredomains.rocks',
+    'https://api.pro-movies.nomoredomains.rocks',
   ],
   optionsSuccessStatus: 200,
   credentials: true,

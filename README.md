@@ -7,9 +7,9 @@
 
 ## Ссылки на проект
 
-IP 
+IP 158.160.98.55
 
-Backend 
+Backend https://api.pro-movies.nomoredomains.rocks 
 
 ## Чеклист проекта  
 https://code.s3.yandex.net/web-developer/static/new-program/web-diploma-criteria-2.0/index.html 
